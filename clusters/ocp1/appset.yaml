@@ -4,6 +4,7 @@ metadata:
   name: cluster-config
   namespace: openshift-gitops
 spec:
+  goTemplate: true
   generators:
     - git:
         repoURL: https://github.com/jaedolph/jaedolph-gitops.git
