@@ -1,0 +1,9 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: vlan100
+spec:
+  addresses:
+  - 192.168.2.50-192.168.2.60
+  autoAssign: true
+  avoidBuggyIPs: false
