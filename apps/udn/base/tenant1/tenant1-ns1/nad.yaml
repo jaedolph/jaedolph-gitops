@@ -1,0 +1,17 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: tenant1-secondary
+spec:
+  config: |2
+    {
+      "cniVersion":"1.0.0",
+      "mtu":1500,
+      "name":"cluster_udn_tenant1-secondary",
+      "netAttachDefName":"tenant1-ns1/tenant1-secondary",
+      "physicalNetworkName":"udn-external",
+      "role":"secondary",
+      "topology":"localnet",
+      "type":"ovn-k8s-cni-overlay",
+      "vlanID":100
+    }

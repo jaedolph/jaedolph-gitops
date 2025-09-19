@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: tenant1-ns1
+resources:
+  - namespace.yaml
+  # - nad.yaml
+components:
+  - ../../../components/httpd
+
+patches:
+  - target:
+      kind: Deployment
+      name: httpd
+    patch: |-
+      - op: add
+        path: /spec/template/metadata/annotations
+        value:
+          v1.multus-cni.io/default-network: tenant1-ns1/tenant1secondary
+
+
+
+
+
+ # k8s.v1.cni.cncf.io/networks: tenant1-ns1/tenant1secondary

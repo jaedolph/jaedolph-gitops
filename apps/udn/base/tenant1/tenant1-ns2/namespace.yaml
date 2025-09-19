@@ -1,0 +1,7 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: tenant1-ns2
+  labels:
+    # k8s.ovn.org/primary-user-defined-network: ''
+    tenant: tenant1

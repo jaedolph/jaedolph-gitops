@@ -1,0 +1,40 @@
+apiVersion: k8s.ovn.org/v1
+kind: ClusterUserDefinedNetwork
+metadata:
+  name: tenant1secondary
+spec:
+  namespaceSelector:
+    matchLabels:
+      tenant: tenant1
+  network:
+    topology: Localnet
+    localnet:
+      vlan:
+        mode: Access
+        access:
+          id: 100
+      role: Secondary
+      physicalNetworkName: udn-external
+      ipam:
+        mode: Enabled
+      subnets:
+        - 192.168.2.0/24
+      excludeSubnets:
+        - 192.168.2.128/25
+        - 192.168.2.0/26
+# ---
+# apiVersion: k8s.ovn.org/v1
+# kind: ClusterUserDefinedNetwork
+# metadata:
+#   name: tenant1primary
+# spec:
+#   namespaceSelector:
+#     matchLabels:
+#       tenant: tenant1
+#   network:
+#     topology: Layer3
+#     layer3:
+#       role: Primary
+#       subnets:
+#         - cidr: 10.40.1.0/24
+#           hostSubnet: 26
