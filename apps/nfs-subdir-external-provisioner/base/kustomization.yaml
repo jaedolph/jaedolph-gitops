@@ -1,0 +1,10 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+namespace: nfs-provisioner
+resources:
+  - github.com/kubernetes-sigs/nfs-subdir-external-provisioner/deploy
+  - namespace.yaml
+  - crb-hostmount-anyuid.yaml
+patches:
+  - path: patch-storage-class.yaml

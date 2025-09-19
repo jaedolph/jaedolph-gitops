@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nfs-client-provisioner
+  name: nfs-client-provisioner
+spec:
+  template:
+    spec:
+      containers:
+        - name: nfs-client-provisioner
+          env:
+            - name: NFS_SERVER
+              value: 192.168.1.137
+            - name: NFS_PATH
+              value: /volume1/ocp2/nfs
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 192.168.1.137
+            path: /volume1/ocp2/nfs
