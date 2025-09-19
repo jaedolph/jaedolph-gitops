@@ -6,4 +6,4 @@ patches:
   - target:
       kind: NodeFeatureDiscovery
       name: nfd-instance
-    path: patch-remove-custom-config.yaml
+    path: patch-remove-outdated-fields.yaml
