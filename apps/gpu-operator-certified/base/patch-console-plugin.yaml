@@ -1,0 +1,15 @@
+- op: replace
+  path: /apiVersion
+  value: console.openshift.io/v1
+
+- op: add
+  path: /spec/backend
+  value:
+    service:
+      basePath: /
+      name: console-plugin-nvidia-gpu
+      namespace: nvidia-gpu-operator
+      port: 9443
+
+- op: remove
+  path: /spec/service
