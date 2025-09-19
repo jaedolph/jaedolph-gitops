@@ -5,6 +5,7 @@
 - op: add
   path: /spec/backend
   value:
+    type: Service
     service:
       basePath: /
       name: console-plugin-nvidia-gpu
