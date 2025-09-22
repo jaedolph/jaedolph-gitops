@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/jaedolph/gitops-catalog/gpu-operator-certified/operator/overlays/stable?ref=nvidia-gpu-console-plugin
-  - https://github.com/jaedolph/gitops-catalog/gpu-operator-certified/instance/overlays/time-sliced-4?ref=nvidia-gpu-console-plugin
+  - https://github.com/redhat-cop/gitops-catalog/gpu-operator-certified/operator/overlays/stable?ref=main
+  - https://github.com/redhat-cop/gitops-catalog/gpu-operator-certified/instance/overlays/time-sliced-4?ref=main
